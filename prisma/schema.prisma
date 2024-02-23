@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-ts"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  Email   String
+  Message String
+  Name    String
+}
