@@ -7,11 +7,10 @@
  *
  */
 
-"use client";
-
-import { Button, Tooltip } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import ThemeIcon from "./ThemeIcon";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -23,18 +22,16 @@ export function ThemeSwitcher() {
   if (!mounted) return null;
 
   return (
-    <Tooltip content="switch themes" color="foreground">
       <Button
         isIconOnly
         size="sm"
         aria-label="themes"
-        radius="full"
-        className="bg-gradient-to-r from-white via-grey to-black via-20%"
+        radius="full"      
         onClick={() =>
           theme === "dark" ? setTheme("light") : setTheme("dark")
         }
-      >
+      > <ThemeIcon dark={theme === "dark"}/>
       </Button>
-    </Tooltip>
+    
   );
 }
