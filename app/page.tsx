@@ -1,8 +1,10 @@
 "use client";
-
 export default function Home() {
   return (<>
-  <p>Nothing here Yet</p>
+<div className="flex flex-col items-center justify-center h-screen">
+ 
+        <h1>Comming Soon</h1>
+      </div>
   </>
   );
 }
