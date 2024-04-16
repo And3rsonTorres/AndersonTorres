@@ -1,16 +1,16 @@
-/**
- * ThemeSwitcher component allows the user to switch between light and dark themes.
- *
- * It uses the useTheme hook from next-themes to get the current theme and set a new theme.
- *
- * There is also useState and useEffect used to handle mounting of the component.
- *
- */
+
 
 import { Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import ThemeIcon from "./ThemeIcon";
+import ThemeIcon from "../../../public/ThemeIcon";
+/**
+ * A React component that provides a button to switch between light and dark themes.
+ *
+ * This component uses the `useTheme` hook from the `next-themes` library to access the current theme and toggle between light and dark modes.
+ *
+ * The component renders a button with an icon that changes based on the current theme. Clicking the button will switch the theme.
+ */
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);

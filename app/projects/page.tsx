@@ -1,8 +1,12 @@
+"use client"
+import { cardsData } from "@/public/ProjectData";
+import CardManager from "../ui/components/CardManager";
+
 function Projects() {
     return (
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center">
         <h1>Projects</h1>
-        <p>Comming Soon</p>
+        <CardManager cards={[...cardsData]}/>
       </div>
     );
   }
