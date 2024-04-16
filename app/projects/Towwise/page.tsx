@@ -1,7 +1,7 @@
 function Projects() {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
-        <h1>Projects</h1>
+        <h1>Towwise </h1>
         <p>Comming Soon</p>
       </div>
     );

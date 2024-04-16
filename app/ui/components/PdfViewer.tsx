@@ -16,6 +16,12 @@ const options = {
 };
 
 
+/**
+ * Renders a PDF viewer component that displays a PDF file.
+ *
+ * @param file - An object with a `path` property that specifies the URL or file path of the PDF document to be displayed.
+ * @returns A React component that displays the PDF document.
+ */
 export default function PDFFileViewer(file: File) {
   const path = file.path;
 
@@ -29,56 +35,63 @@ export default function PDFFileViewer(file: File) {
     }
 
     // Ensure window is defined (which it will be in the client-side environment)
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       // Add event listener for resize events
-      window.addEventListener('resize', handleWindowResize);
+      window.addEventListener("resize", handleWindowResize);
 
       // Set initial width
       handleWindowResize();
 
       // Return a cleanup function to remove the event listener
       return () => {
-        window.removeEventListener('resize', handleWindowResize);
+        window.removeEventListener("resize", handleWindowResize);
       };
     }
   }, []);
 
-
-  function onDocumentLoadSuccess({ numPages: nextNumPages }: PDFDocumentProxy): void {
+  function onDocumentLoadSuccess({
+    numPages: nextNumPages,
+  }: PDFDocumentProxy): void {
     setNumPages(nextNumPages);
   }
 
- // Determine width based on window size
- const calculateWidth = () => {
-  if (windowWidth > 1024) {
-    return 800; // max width for larger screens
-  } else if (windowWidth > 768) {
-    return windowWidth - 200; // slightly smaller on medium screens
-  } else {
-    return windowWidth - 50; // use most of the screen on small screens
-  }
-};
+  // Determine width based on window size
+  const calculateWidth = () => {
+    if (windowWidth > 1024) {
+      return 800; 
+    } else if (windowWidth > 768) {
+      return windowWidth - 200; 
+    } else {
+      return windowWidth - 50; 
+    }
+  };
 
-return (
-  <div className="bg-zinc-400 min-h-screen font-sans text-white">
-    <header className="bg-gradient-to-r from-indigo-600  to-sky-600 via-blue-600 
-    text-center md:text-2xl text-lg shadow-lg sm:p-2 p-3 sticky top-0 z-50">
-      <Link href='#'>CPP Portfolio</Link>
-    </header>
-    <div className="flex my-2.5 p-2.5">
-      <div className="w-full max-w-[calc(100%-2em)] my-2">
-        <Document file={path} onLoadSuccess={onDocumentLoadSuccess} options={options}>
-          {Array.from(new Array(numPages), (el, index) => (
-            <Page
-              key={`page_${index + 1}`}
-              pageNumber={index + 1}
-              width={calculateWidth()}
-              className="my-4 shadow-md"
-            />
-          ))}
-        </Document>
+  return (
+    <div className="bg-zinc-400 min-h-screen font-sans text-white">
+      <header
+        className="bg-gradient-to-r from-indigo-600  to-sky-600 via-blue-600 
+    text-center md:text-2xl text-lg shadow-lg sm:p-2 p-3 sticky top-0 z-50"
+      >
+        <Link href="#">CPP Portfolio</Link>
+      </header>
+      <div className="flex my-2.5 p-2.5">
+        <div className="w-full max-w-[calc(100%-2em)] my-2">
+          <Document
+            file={path}
+            onLoadSuccess={onDocumentLoadSuccess}
+            options={options}
+          >
+            {Array.from(new Array(numPages), (el, index) => (
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                width={calculateWidth()}
+                className="my-4 shadow-md"
+              />
+            ))}
+          </Document>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 }
