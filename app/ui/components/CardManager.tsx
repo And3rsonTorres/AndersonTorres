@@ -1,6 +1,6 @@
-import { CardManagerProps } from '@/app/Interface/interface';
+import {CardProps } from '@/app/Interface/interface';
 import { CardProvider } from '@/app/lib/CardContext';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectCard from './Card';
 
 
@@ -14,7 +14,30 @@ import ProjectCard from './Card';
  */
 
     
-    const CardManager: React.FC<CardManagerProps> = ({ cards }) => {
+    const CardManager = () => {
+      const [cards, setCards] = useState<CardProps[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch('/api/projects');
+        const data = await response.json();
+        setCards(data); // Assuming the API returns an array of card data
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []); // Empty dependency array means this effect runs once on mount
+
+  if (loading) {
+    return <div>Loading...</div>; // Or any other loading state representation
+  }
       return (
         <CardProvider>
           <div className="flex flex-wrap justify-center md:justify-start m-auto gap-4">

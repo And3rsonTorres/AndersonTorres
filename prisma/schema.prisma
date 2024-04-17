@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-ts"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -12,4 +12,15 @@ model Contact {
   Email   String
   Message String
   Name    String
+}
+
+model Project {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  AlternateName String
+  description   String
+  githubLink    String
+  headter       String
+  imagePath     String
+  insideLink    String
+  version       String
 }
