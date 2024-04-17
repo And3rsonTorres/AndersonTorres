@@ -1,4 +1,4 @@
-function Towwise() {
+function UMLRightNow() {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <h1>Towwise </h1>
@@ -6,4 +6,4 @@ function Towwise() {
       </div>
     );
   }
-  export default Towwise;
+  export default UMLRightNow;

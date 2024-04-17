@@ -16,11 +16,11 @@ model Contact {
 
 model Project {
   id            String @id @default(auto()) @map("_id") @db.ObjectId
-  AlternateName String
+  alternateName String
   description   String
   githubLink    String
-  headter       String
+  header        String
   imagePath     String
-  insideLink    String
+  insidelink    String
   version       String
 }
