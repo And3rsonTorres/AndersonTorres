@@ -1,10 +1,10 @@
 "use client";
-export default function Home() {
-  return (<>
-<div className="flex flex-col items-center justify-center h-screen">
- 
-        <h1>Comming Soon</h1>
-      </div>
-  </>
+
+const App = () => {
+
+  return (
+    <div className="container mx-auto">
+    </div>
   );
-}
+};
+export default App;

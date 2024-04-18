@@ -31,5 +31,20 @@ export interface CardContextType {
   activeCard: string | null;
   setActiveCard: (cardId: string | null) => void;
 }
-
+/**
+ * Represents the properties of a card manager component.
+ *
+ * @property {CardProps[]} cards - An array of card properties.
+ */
+export interface CardManagerProps {
+  cards: CardProps[];
+}
+/**
+ * Represents the properties of a growing text component.
+ *
+ * @property {string} inputText - The text to be displayed in the growing text component.
+ */
+export interface GrowingTextProps {
+  inputText: string;
+}
   
