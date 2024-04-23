@@ -94,7 +94,7 @@ const ProjectCard: React.FC<CardProps> = ({
               >
                 Description
               </Button>
-              <Link isBlock href={githubLink} className="github-link w-10">
+              <Link isBlock href={githubLink} className="w-10">
                 <Github />
               </Link>
             </div>

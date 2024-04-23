@@ -46,5 +46,6 @@ export interface CardManagerProps {
  */
 export interface GrowingTextProps {
   inputText: string;
+  Title: string;
 }
   

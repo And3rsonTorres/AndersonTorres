@@ -27,19 +27,20 @@ export default function NavBar() {
           "relative",
           "h-full",
           "items-center",
-          "hover:text-zinc-200",
+    
+          "hover:text-stone-400",
           "data-[active=true]:after:absolute",
           "data-[active=true]:after:bottom-0",
           "data-[active=true]:after:left-0",
           "data-[active=true]:scale-105",
-          "data-[active=true]:text-zinc-300",
+          "data-[active=true]:text-stone-300",
           "data-[active=true]:after:right-0",
           "data-[active=true]:after:h-[3px]",
           "data-[active=true]:after:rounded-[4px]",
           "data-[active=true]:after:bg-zinc-300",
         ],
       }}
-      className="bg-gradient-to-r from-sky-600  to-indigo-600 via-blue-600  text-lg md:text-2xl font-medium"
+      className="bg-gradient-to-r from-sky-600  to-indigo-600 via-blue-600  z-50 text-lg md:text-2xl font-medium"
     >
       <NavbarBrand>
         <Link href="/">

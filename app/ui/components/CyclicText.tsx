@@ -1,66 +1,63 @@
 import { useEffect, useState } from "react";
 import { AnimatedCharacters } from "@/app/Utils/TextUtil";
 // Text definitions
-const staticFirstLine = "Hi there 👋";
-const dynamicPartsSecondLine = ["Anderson here", "welcome to my corner"];
-const staticThirdLinePart1 = "where My ";
-const dynamicWords = ["magical", "Alchemical", "Radiants"];
-const staticThirdLinePart2 = "Sites/Apps START";
+const welcome = "Greetings 👋";
+const intro = "Anderson Over Here";
+const secondLine = "I'm a recent graduate from the UMASS Lowell";
+const thirdline=" with a Bachelor's degree in Computer Science."
+const forthline = "I'm currently working With: ";
+const working = ["MongoDB", "NextJS", "Typescript","ExpressJS", "Python", "SQL", "PostgresSQL", "AWS", "Docker", "..." ];
 
-// Gradient styles for each dynamic word
+
 const gradients = [
-    "from-pink-500 to-yellow-500", // Gradient for "magic"
-    "from-green-500 to-blue-500", // Gradient for "Alchemical"
-    "from-purple-500 to-pink-500" // Gradient for "Radiant"
+    "from-[#00ed64] to-[#00684a]",
+    "from-white to-[#007acc]", 
+    "from-pink-500 to-yellow-500",
+    "from-purple-500 to-pink-500",
 ];
 
-// Gradient specifically for "Anderson here"
-const andersonGradient = "from-teal-400 to-cyan-500";
 
 
 
+/**
+* Renders a cyclic text component that displays a series of text lines with animated characters and gradient effects.
+* The text lines cycle through a set of predefined strings, with the color and order of the lines changing every 2.5 seconds.
+*/
 const CyclicText = () => {
-    const [indexSecondLine, setIndexSecondLine] = useState(0);
-    const [indexThirdLine, setIndexThirdLine] = useState(0);
+const [indexWork, setWorkIndex] = useState(0);
+const [colorIndex, setColorIndex] = useState(0);
+useEffect(() => {
+const intervalSecondLine = setInterval(() => {
+setWorkIndex(prev => (prev + 1) % working.length);
+setColorIndex(prev => (prev + 1) % gradients.length);
+}, 2500);
 
-    useEffect(() => {
-        const intervalSecondLine = setInterval(() => {
-            setIndexSecondLine(prev => (prev + 1) % dynamicPartsSecondLine.length);
-        }, 4000); // Cycle every 4 seconds
+return () => {
+clearInterval(intervalSecondLine);
+};
+}, []);
 
-        const intervalThirdLine = setInterval(() => {
-            setIndexThirdLine(prev => (prev + 1) % dynamicWords.length);
-        }, 3000); // Cycle dynamic words every 3 seconds
+return (
+<div className="flex justify-center items-center ">
+<div className="text-center">
+<h1 className="text-5xl md:text-7xl font-bold  p-10">
+{welcome}
+</h1>
+<h2 className="text-3xl md:text-5xl font-bold m-4" >
 
-        return () => {
-            clearInterval(intervalSecondLine);
-            clearInterval(intervalThirdLine);
-        };
-    }, []);
-
-    return (
-        <div className="flex justify-center items-center h-screen bg-gradient-to-r from-blue-500 to-indigo-600">
-            <div className="text-center">
-                <h1 className="text-5xl md:text-7xl font-bold text-white">
-                    {staticFirstLine}
-                </h1>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mt-4">
-                    {indexSecondLine === 0 ?
-                        <AnimatedCharacters text={dynamicPartsSecondLine[indexSecondLine]} gradientClass={andersonGradient} />
-                        : dynamicPartsSecondLine[indexSecondLine]
-                    }
-                </h2>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mt-4">
-                    {staticThirdLinePart1} {" "}
-                    <AnimatedCharacters
-                        text={dynamicWords[indexThirdLine]}
-                        gradientClass={gradients[indexThirdLine]}
-                    />
-                    {` ${staticThirdLinePart2}`}
-                </h2>
-            </div>
-        </div>
-    );
+<AnimatedCharacters text={intro} gradientClass={gradients[colorIndex]} />
+<br />
+<AnimatedCharacters text={secondLine} gradientClass={gradients[(colorIndex + indexWork) % gradients.length]} />
+<br />
+<AnimatedCharacters text={thirdline} gradientClass={gradients[(colorIndex + indexWork) % gradients.length]} />
+<br />
+<AnimatedCharacters text={forthline} gradientClass={gradients[colorIndex]} />
+<AnimatedCharacters text={working[indexWork]} gradientClass={gradients[colorIndex]}
+/>
+</h2>
+</div>
+</div>
+);
 };
 
 export default CyclicText;

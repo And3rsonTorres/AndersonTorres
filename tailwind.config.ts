@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-       
+        LightModeBG: "url('/LightMode.jpeg')",
+        DarkModeBG: "url('/DarkMode.jpeg')",
       },
     },
   },

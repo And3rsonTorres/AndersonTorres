@@ -2,6 +2,7 @@ import {CardProps } from '@/app/Interface/interface';
 import { CardProvider } from '@/app/lib/CardContext';
 import React, { useEffect, useState } from 'react';
 import ProjectCard from './Card';
+import { Spinner } from '@nextui-org/react';
 
 
 /**
@@ -24,7 +25,7 @@ import ProjectCard from './Card';
       try {
         const response = await fetch('/api/projects');
         const data = await response.json();
-        setCards(data); // Assuming the API returns an array of card data
+        setCards(data); 
       } catch (error) {
         console.error('Failed to fetch projects:', error);
       } finally {
@@ -33,10 +34,10 @@ import ProjectCard from './Card';
     };
 
     fetchProjects();
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []); 
 
   if (loading) {
-    return <div>Loading...</div>; // Or any other loading state representation
+    return <div><Spinner size='lg'  color="white" label='Loading'/></div>;
   }
       return (
         <CardProvider>

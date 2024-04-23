@@ -11,16 +11,17 @@ export const metadata: Metadata = {
   description: "Anderson Torres Porfolio",
 };
 
-export default function RootLayout({children}: { children: React.ReactNode }) {
-  return (
-    <html lang="en" >
-      
-      <body className={inter.className}>
-        <Providers>
-          {children}
-        </Providers>
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+return (
+<html lang="en" className={inter.className}>
+
+<body className=" w-full min-h-screen bg-LightModeBG dark:bg-DarkModeBG bg-scroll bg-center text-white">
+<Providers>
+{children}
+</Providers>
+</body>
+</html>
+);
 };
+
 

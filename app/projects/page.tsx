@@ -3,7 +3,7 @@ import CardManager from "../ui/components/CardManager";
 
 function Projects() {
   return (
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center h-screen">
         <h1>Projects</h1>
         
         <CardManager/>
