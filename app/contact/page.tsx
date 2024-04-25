@@ -1,8 +1,8 @@
+import ContactUs from "../ui/components/ContactForm";
 function Contact() {
     return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1>Contact</h1>
-        <p>Comming Soon</p>
+      <div className="flex flex-auto items-center justify-center h-screen">
+        <ContactUs/>
       </div>
     );
   }

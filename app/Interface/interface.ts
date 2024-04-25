@@ -44,7 +44,7 @@ export interface CardManagerProps {
  *
  * @property {string} inputText - The text to be displayed in the growing text component.
  */
-export interface GrowingTextProps {
+export interface SpandingCardProps {
   inputText: string;
   Title: string;
 }
