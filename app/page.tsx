@@ -1,17 +1,21 @@
 "use client";
 
 import CyclicText from "./ui/components/CyclicText";
-import GrowingText from "./ui/components/GrowingText";
+import SpandingCard from "./ui/components/SpandingCard";
 import { about, projects } from "@/public/data";
 import CardManager from "./ui/components/CardManager";
+import Proficiency from "./ui/components/ShowProficiency";
+import ContactUs from "./ui/components/ContactForm";
 const App = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <CyclicText/>
-      <GrowingText  inputText={projects} Title="Projects"/>
+    <CyclicText/>
+    <Proficiency/>
+      <SpandingCard  inputText={projects} Title="Projects"/>
       <CardManager/>
-      <GrowingText  inputText={about} Title="About Me"/>
+      <ContactUs/>
+      <SpandingCard  inputText={about} Title="About Me"/>
       
     </div>
   );

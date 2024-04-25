@@ -1,7 +1,7 @@
 import {CardProps } from '@/app/Interface/interface';
 import { CardProvider } from '@/app/lib/CardContext';
 import React, { useEffect, useState } from 'react';
-import ProjectCard from './Card';
+import ProjectCard from './ProjectCard';
 import { Spinner } from '@nextui-org/react';
 
 

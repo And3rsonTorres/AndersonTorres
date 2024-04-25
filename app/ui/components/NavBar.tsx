@@ -40,7 +40,7 @@ export default function NavBar() {
           "data-[active=true]:after:bg-zinc-300",
         ],
       }}
-      className="bg-gradient-to-r from-sky-600  to-indigo-600 via-blue-600  z-50 text-lg md:text-2xl font-medium"
+      className="bg-black/70  dark:bg-white/70 z-50 text-lg md:text-2xl font-medium"
     >
       <NavbarBrand>
         <Link href="/">

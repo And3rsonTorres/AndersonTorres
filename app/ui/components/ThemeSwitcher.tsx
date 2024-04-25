@@ -26,7 +26,8 @@ export function ThemeSwitcher() {
         isIconOnly
         size="sm"
         aria-label="themes"
-        radius="full"      
+        radius="full"
+        className="text-white hover:text-gray-400"      
         onClick={() =>
           theme === "dark" ? setTheme("light") : setTheme("dark")
         }

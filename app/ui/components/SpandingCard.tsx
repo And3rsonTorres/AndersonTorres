@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { randomize } from '@/app/Utils/TextUtil';
-import { GrowingTextProps } from '@/app/Interface/interface';
+import { SpandingCardProps } from '@/app/Interface/interface';
+import { Card, CardBody } from '@nextui-org/react';
 
-const GrowingText: React.FC<GrowingTextProps> = ({ inputText,Title }) => {
+const SpandingCard: React.FC<SpandingCardProps> = ({ inputText,Title }) => {
   const [visibleText, setVisibleText] = useState<string[]>([]);
-  const [showFullText, setShowFullText] = useState(false);
   const paragraphs = inputText.split('\n');
 
   useEffect(() => {
-    if (!showFullText) {
       const interval = setInterval(() => {
         setVisibleText((prevVisibleText) => {
           const nextCharIndex = prevVisibleText.length;
@@ -18,16 +17,20 @@ const GrowingText: React.FC<GrowingTextProps> = ({ inputText,Title }) => {
       }, 50); 
 
       return () => clearInterval(interval);
-    }
-  }, [paragraphs, showFullText]);
+    
+  }, [paragraphs]);
 
 
   return (
-    <div className="flex justify-center items-center m-10">
-      <div className="p-6 max-w-md mx-auto bg-white dark:bg-emerald-100 opacity-85 rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:opacity-100 hover:shadow-xl">
-        <div className="space-y-4 text-center text-lg">
-          <h1 className="text-xl font-semibold text-center text-gray-800 mb-2">{Title}</h1>
-          <h2 className="font-medium leading-tight text-gray-900">
+    <Card className="flex justify-center items-center m-10">
+      <CardBody className="p-6 max-w-md mx-auto bg-gradient-to-br from-indigo-100 to-indigo-200 dark:from-emerald-700 dark:to-emerald-500  
+      opacity-85 rounded-xl shadow-md overflow-hidden 
+      md:max-w-2xl hover:opacity-100 hover:shadow-xl
+      border-2 border-indigo-500
+      ">
+        <div className="space-y-4 text-center text-lg text-black dark:text-white">
+          <h1 className="text-xl font-semibold text-center  mb-2">{Title}</h1>
+          <h2 className="font-medium leading-tight ">
             {visibleText.map((char, index) => (
               <motion.span
                 key={index}
@@ -40,9 +43,9 @@ const GrowingText: React.FC<GrowingTextProps> = ({ inputText,Title }) => {
             ))}
           </h2>
         </div>
-      </div>
-    </div>
+      </CardBody>
+    </Card>
   );
 };
 
-export default GrowingText;
+export default SpandingCard;
