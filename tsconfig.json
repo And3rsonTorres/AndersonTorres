@@ -21,6 +21,13 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/lib/Mongo/index.js", "app/lib/Mongo/index.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/lib/Mongo/index.js",
+    "app/lib/Mongo/index.js"
+  ],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,5 @@
-
 import type { Metadata } from "next";
-import {Providers} from "../app/providers";
+import { Providers } from "../app/providers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -11,17 +10,16 @@ export const metadata: Metadata = {
   description: "Anderson Torres Porfolio",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-return (
-<html lang="en" className={inter.className}>
-
-<body className="dark:text-white text-black bg-gray-100 dark:bg-gray-800">
-<Providers>
-{children}
-</Providers>
-</body>
-</html>
-);
-};
-
-
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={inter.className}>
+      <body className="dark:text-white text-black bg-gray-100 dark:bg-gray-800">
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}

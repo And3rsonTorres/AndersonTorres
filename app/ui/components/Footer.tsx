@@ -1,12 +1,11 @@
+/**
+ * The `Footer` component represents the footer section of the application.
+ * It is rendered at the bottom of the page and includes a copyright notice.
+ * The footer is animated using the `framer-motion` library, fading in and sliding up from the bottom of the page.
+ */
 
 import React from "react";
 import { motion } from "framer-motion";
-/**
- * The `Footer` component represents the footer section of the application.
- * It uses the `motion` component from the `framer-motion` library to add
- * a smooth animation effect when the component mounts.
- */
-
 const Footer = () => {
   return (
     <motion.footer
