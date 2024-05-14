@@ -1,29 +1,33 @@
+/**
+ * `CyclicText` is a React component that displays a cyclic text animation. It shows a greeting message for 3 seconds, then transitions to a "Let's Connect" message with an animated skill phrase and a bouncing arrow icon.
+ *
+ * The component uses the `AnimatedCharacters` utility to animate the text, and the `useState` and `useEffect` hooks to manage the state and timing of the animation.
+ *
+ * The component is styled using Tailwind CSS classes, with a gradient background and a rounded border.
+ */
+"use client";
 import { useEffect, useState } from "react";
-import { AnimatedCharacters } from "@/app/Utils/TextUtil";
+import { AnimatedCharacters, CardBackgroundStyle } from "@/app/Utils/TextUtil";
+import { TypeAnimation } from "react-type-animation";
 
 // Text definitions
-const name = "Anderson";
-const greeting = "Hello, I'm";
+const greeting = "Hello, I'm Anderson Torres";
 const handshake = "Let's Connect 🤝";
 const skillPhrases = [
-    "I'm skilled in",
-    "I'm experienced with",
-    "I have expertise in",
-    "I work with",
-    "I'm proficient in",
-    "I specialize in"
-  ];
+  "I'm skilled in",
+  "I'm experienced with",
+  "I have expertise in",
+  "I work with",
+  "I'm proficient in",
+  "I specialize in",
+];
 
 const gradients = [
   "from-[#0099ff] to-[#006699]",
   "from-[#ff9900] to-[#cc6600]",
-  "from-[#ff0066] to-[#cc0033]"
+  "from-[#ff0066] to-[#cc0033]",
 ];
 
-/**
- * Renders a cyclic text component that displays a series of text lines with animated characters and gradient effects.
- * The text lines cycle through a set of predefined strings, with the color and order of the lines changing every 2.5 seconds.
- */
 const CyclicText = () => {
   const [indexSkill, setSkillIndex] = useState(0);
   const [colorIndex, setColorIndex] = useState(0);
@@ -46,10 +50,15 @@ const CyclicText = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center border-2 border-indigo-500 rounded-xl p-6 max-w-md mx-auto bg-gradient-to-br from-indigo-100 to-indigo-200 dark:from-emerald-700 dark:to-emerald-500 opacity-85 shadow-md overflow-hidden md:max-w-2xl hover:opacity-100 hover:shadow-xl">
+    <div
+      className={`flex justify-center items-center p-6 max-w-md m-10 sm:mx-auto ${CardBackgroundStyle} opacity-85 rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:opacity-100 hover:shadow-lg`}
+    >
       <div className="text-center">
         {showGreeting ? (
-          <h1 className="text-5xl md:text-7xl font-bold pt-10">{greeting}<br /><AnimatedCharacters text={name} gradientClass={gradients[0]}/></h1>
+          <TypeAnimation
+            sequence={[greeting]}
+            className={`text-5xl md:text-7xl font-bold pt-10 bg-clip-text text-transparent bg-gradient-to-r ${gradients[2]}`}
+          ></TypeAnimation>
         ) : (
           <h1 className="text-5xl md:text-7xl font-bold pt-10">{handshake}</h1>
         )}
@@ -61,14 +70,25 @@ const CyclicText = () => {
                 gradientClass={gradients[colorIndex]}
               />
               <br />
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 m-auto text-indigo-500 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10 mx-auto text-indigo-500 animate-bounce"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
             </>
           )}
         </h2>
-        
-      </div>    </div>
+      </div>
+    </div>
   );
 };
 

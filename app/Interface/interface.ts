@@ -1,4 +1,3 @@
-
 /**
  * Represents the properties of a card component.
  *
@@ -46,6 +45,57 @@ export interface CardManagerProps {
  */
 export interface SpandingCardProps {
   inputText: string;
-  Title: string;
+  title: string;
 }
-  
+
+/**
+ * Represents the properties of a marquee component.
+ *
+ * @property {React.ReactNode} children - The content to be displayed in the marquee.
+ * @property {string} marqueeStyle - The CSS class names to apply to the marquee.
+ * @property {number} [seconds] - The duration in seconds for the marquee animation.
+ */
+export interface MarqueeProps {
+  children: React.ReactNode;
+  marqueeStyle: string;
+  seconds?: number;
+}
+/**
+ * Represents an email message.
+ *
+ * @property {string | undefined} to - The email address of the recipient.
+ * @property {string | undefined} from - The email address of the sender.
+ * @property {string} subject - The subject line of the email.
+ * @property {string} text - The plain text content of the email.
+ * @property {string} html - The HTML content of the email.
+ */
+/**
+ * Represents the properties of an email.
+ * @property {string | undefined} to - The email address of the recipient.
+ * @property {string | undefined} from - The email address of the sender.
+ * @property {string} subject - The subject line of the email.
+ * @property {string} text - The plain text content of the email.
+ * @property {string} html - The HTML content of the email.
+ */
+export interface EmailProps {
+  to: string | undefined;
+  from: string | undefined;
+  subject: string;
+  text: string;
+  html: string;
+}
+
+/**
+ * Represents the properties of a modal component.
+ *
+ * @property {string} Title - The title of the modal.
+ * @property {string | React.ReactNode | JSX.Element} children - The content to be displayed in the modal.
+ * @property {boolean} isOpen - Indicates whether the modal is open or closed.
+ * @property {() => void} onClose - A function to be called when the modal is closed.
+ */
+export interface ModalProps {
+  Title: string;
+  children: string | React.ReactNode | JSX.Element;
+  isOpen: boolean;
+  onClose: () => void;
+}

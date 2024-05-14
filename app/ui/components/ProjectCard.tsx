@@ -1,9 +1,3 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Card, CardHeader, CardFooter, Image, Link, Chip, Button } from "@nextui-org/react";
-import Github from "@/public/githubIcon";
-import { CardProps } from '@/app/Interface/interface';
-import { useCardContext } from '@/app/lib/CardContext';
-
 /**
  * A React functional component that renders a project card with a header, image, and footer.
  *
@@ -18,6 +12,20 @@ import { useCardContext } from '@/app/lib/CardContext';
  * @param {string} [props.alternateName] - An alternate name for the project card image.
  * @returns {React.ReactElement} - The project card component.
  */
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Card,
+  CardHeader,
+  CardFooter,
+  Image,
+  Link,
+  Chip,
+  Button,
+} from "@nextui-org/react";
+import Github from "@/public/githubIcon";
+import { CardProps } from "@/app/Interface/interface";
+import { useCardContext } from "@/app/lib/CardContext";
+
 const ProjectCard: React.FC<CardProps> = ({
   id,
   version,
@@ -67,7 +75,9 @@ const ProjectCard: React.FC<CardProps> = ({
       className="h-[300px] border-2 border-indigo-500 rounded-xl shadow-xl"
     >
       <CardHeader className="z-10 absolute top-1 flex-col items-start">
-        <Chip className="bg-black text-tiny font-semibold text-white p-0.5">{version}</Chip>
+        <Chip className="bg-black text-tiny font-semibold text-white p-0.5">
+          {version}
+        </Chip>
         <h4 className="font-medium text-2xl">{header}</h4>
       </CardHeader>
       <Image
