@@ -18,6 +18,7 @@ export async function POST(req: NextRequest) {
     let parsed = ContactSchema.safeParse(newContact);
 
     if (parsed.success) {
+      await mail(parsed.data.Message);
       await prisma.contact.create({
         data: {
           Name:
@@ -31,7 +32,6 @@ export async function POST(req: NextRequest) {
           Message: parsed.data.Message,
         },
       });
-      mail(parsed.data.Message);
 
       return NextResponse.json({ message: "Contact saved successfully" });
     } else {

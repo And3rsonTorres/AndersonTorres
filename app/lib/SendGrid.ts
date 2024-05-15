@@ -2,7 +2,7 @@ import { EmailProps } from "../Interface/interface";
 
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-export default function mail(data: string, recipient?: string) {
+export default async function mail(data: string, recipient?: string) {
   const msg: EmailProps = {
     to: process.env.RECIPIENT || recipient, // Change to your recipient
     from: process.env.MY_EMAIL, // Change to your verified sender
