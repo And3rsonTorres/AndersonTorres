@@ -72,7 +72,7 @@ const ProjectCard: React.FC<CardProps> = ({
     <Card
       isFooterBlurred
       ref={cardRef}
-      className="h-[300px] border-2 border-indigo-500 rounded-xl shadow-xl"
+      className="h-[300px]  rounded-xl shadow shadow-indigo-700 dark:shadow-indigo-200"
     >
       <CardHeader className="z-10 absolute top-1 flex-col items-start">
         <Chip className="bg-black text-tiny font-semibold text-white p-0.5">
@@ -100,7 +100,7 @@ const ProjectCard: React.FC<CardProps> = ({
               </Link>
               <Button
                 onClick={toggleDescription}
-                className="bg-primary hover:bg-primary-300  rounded-full px-1.5 py-0.5"
+                className="border-0 hover:border-1 boder-secundary-300  rounded-full px-1.5 py-0.5"
               >
                 Description
               </Button>

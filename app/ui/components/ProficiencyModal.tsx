@@ -92,7 +92,7 @@ const AllProficiency: React.FC = () => {
         ))}
       </Modal>
       <button
-        className={` hover:bg-black/40  hover:dark:bg-white/60 border-2 border-b-0 border-indigo-600 font-bold pt-2 px-4 rounded-t-full ${
+        className={` hover:scale-105 shadow shadow-indigo-700 dark:shadow-indigo-300 font-bold pt-2 px-4 rounded-t-full ${
           isOpen ? "invisible" : ""
         }`}
         onClick={openModal}

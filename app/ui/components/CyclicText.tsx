@@ -51,7 +51,7 @@ const CyclicText = () => {
 
   return (
     <div
-      className={`flex justify-center items-center p-6 max-w-md m-10 sm:mx-auto ${CardBackgroundStyle} opacity-85 rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:opacity-100 hover:shadow-lg`}
+      className={`flex justify-center items-center p-6 max-w-md m-10 sm:mx-auto ${CardBackgroundStyle} overflow-hidden md:max-w-2xl`}
     >
       <div className="text-center">
         {showGreeting ? (
@@ -72,7 +72,7 @@ const CyclicText = () => {
               <br />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 mx-auto text-indigo-500 animate-bounce"
+                className="h-10 w-10 mx-auto text-indigo-700 dark:text-indigo-400 animate-bounce"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

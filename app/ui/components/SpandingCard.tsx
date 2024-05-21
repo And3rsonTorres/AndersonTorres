@@ -29,10 +29,10 @@ const SpandingCard: React.FC<SpandingCardProps> = ({ inputText, title }) => {
   }, [paragraphs]);
 
   return (
-    <Card className="flex justify-center items-center m-10">
-      <CardBody
-        className={`p-6 max-w-md mx-auto ${CardBackgroundStyle} opacity-85 rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:opacity-100 hover:shadow-xl`}
-      >
+    <Card
+      className={`flex justify-center items-center m-10 ${CardBackgroundStyle}`}
+    >
+      <CardBody className={`p-6 max-w-md mx-auto overflow-hidden md:max-w-2xl`}>
         <div className="space-y-4 text-center text-lg text-black dark:text-white">
           <h1 className="text-xl font-semibold text-center  mb-2">{title}</h1>
           <h2 className="font-medium leading-tight ">

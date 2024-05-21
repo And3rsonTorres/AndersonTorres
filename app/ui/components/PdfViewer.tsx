@@ -91,7 +91,7 @@ export default function PDFFileViewer(file: File) {
                   key={`page_${index + 1}`}
                   pageNumber={index + 1}
                   width={calculateWidth()}
-                  className="my-4 shadow-md"
+                  className="my-4 shadow  shadow-indigo-700 dark:shadow-indigo-300"
                 />
               ))}
             </Document>

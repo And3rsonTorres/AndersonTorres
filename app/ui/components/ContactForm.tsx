@@ -66,7 +66,7 @@ const ContactForm = () => {
               First Name
             </label>
 
-            <p className="text-sm text-gray-500 dark:text-white mb-1">
+            <p className="text-sm text-black/45 dark:text-white mb-1">
               Please enter your first name.
             </p>
             <input
@@ -86,7 +86,7 @@ const ContactForm = () => {
               Last Name
             </label>
 
-            <p className="text-sm text-gray-500 dark:text-white mb-1">
+            <p className="text-sm text-black/45 dark:text-white mb-1">
               Please include your last name.
             </p>
 
@@ -107,7 +107,7 @@ const ContactForm = () => {
           <label htmlFor="email" className="block mt-1">
             Email
           </label>
-          <p className="text-sm text-gray-500 dark:text-white mb-1">
+          <p className="text-sm text-black/45 dark:text-white mb-1">
             Please share your email address so I can respond to your inquiry
             promptly.
           </p>
@@ -127,7 +127,7 @@ const ContactForm = () => {
           <label htmlFor="message" className="block mt-1">
             Message
           </label>
-          <p className="text-sm text-gray-500 dark:text-white mb-1">
+          <p className="text-sm text-black/45 dark:text-white mb-1">
             Please share any thoughts, inquiries, or potential opportunities you
             have in mind. Looking forward to connecting with you!
           </p>
@@ -148,10 +148,9 @@ const ContactForm = () => {
         <motion.button
           type="submit"
           whileTap={{
-            scale: 0.9,
-            rotate: "1deg",
+            translateY: 1,
           }}
-          className="bg-primary w-full text-white py-2 px-4 rounded-md hover:bg-primary-600 transition-colors"
+          className="bg-primary w-full font-semibold py-2 px-4 rounded-md hover:bg-primary-600 transition-colors"
         >
           Submit
         </motion.button>

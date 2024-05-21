@@ -124,6 +124,6 @@ export const OverlayCopy = ({
 };
 
 export const CardBackgroundStyle =
-  "border-2 border-indigo-500 bg-gradient-to-br from-indigo-100 to-indigo-200 dark:from-emerald-700 dark:to-emerald-500";
+  "shadow shadow-indigo-700 bg-gradient-to-br from-warning-100 to-indigo-400 dark:from-danger-300 dark:to-indigo-700 dark:shadow-indigo-300 rounded-xl opacity-85 dark:opacity-75 hover:opacity-100 dark:hover:opacity-100";
 export const InputStyle =
-  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500";
+  "w-full px-3 py-2 shadow shadow-indigo-700 rounded-md focus:outline-none focus:shadow-indigo-200 focus:bg-white/90 dark:shadow-indigo-300 dark:focus:shadow-indigo-200 dark:focus:bg-gray-800";
