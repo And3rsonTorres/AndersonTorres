@@ -4,12 +4,11 @@ import InfoCard from "../ui/components/InfoCard";
 
 function Projects() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center md:h-screen">
       <InfoCard
         title="Projects"
-        inputText="Here you can find some of my projects more will be added later."
+        inputText="Here you can find some of my projects.Currently working on adding more."
       />
-
       <CardManager />
     </div>
   );

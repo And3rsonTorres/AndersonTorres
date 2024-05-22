@@ -36,7 +36,7 @@ const ContactForm = () => {
 
   return (
     <div
-      className={`p-6 max-w-md m-10 sm:mx-auto ${CardBackgroundStyle} mb-20 rounded-xl shadow-md md:max-w-2xl`}
+      className={`p-6 max-w-md m-10 sm:mx-auto ${CardBackgroundStyle} mb-20 shadow-md md:max-w-2xl`}
     >
       <form
         onSubmit={Form.handleSubmit(async (data) => {
@@ -145,15 +145,12 @@ const ContactForm = () => {
             </p>
           )}
         </div>
-        <motion.button
+        <button
           type="submit"
-          whileTap={{
-            translateY: 1,
-          }}
-          className="bg-primary w-full font-semibold py-2 px-4 rounded-md hover:bg-primary-600 transition-colors"
+          className="bg-primary w-full font-semibold py-2 px-4 rounded-xl hover:bg-primary-600 transition-colors hover:-translate-y-1"
         >
           Submit
-        </motion.button>
+        </button>
         <Toaster />
       </form>
     </div>

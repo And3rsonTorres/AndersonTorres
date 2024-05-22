@@ -25,14 +25,15 @@ import {
 import Github from "@/public/githubIcon";
 import { CardProps } from "@/app/Interface/interface";
 import { useCardContext } from "@/app/lib/CardContext";
+import { CardBackgroundStyle } from "@/app/Utils/TextUtil";
 
 const ProjectCard: React.FC<CardProps> = ({
   id,
   version,
   header,
-  imagePath = "/defaultImagePath.png",
+  imagePath = "/defaultImagePath.jpg",
   insidelink,
-  githubLink = "#",
+  githubLink = "/projects/NotInGitHub",
   description,
   alternateName,
 }: CardProps): React.ReactElement => {
@@ -72,24 +73,28 @@ const ProjectCard: React.FC<CardProps> = ({
     <Card
       isFooterBlurred
       ref={cardRef}
-      className="h-[300px]  rounded-xl shadow shadow-indigo-700 dark:shadow-indigo-200"
+      className="h-[300px] group rounded-xl shadow shadow-indigo-700 dark:shadow-indigo-200"
     >
-      <CardHeader className="z-10 absolute top-1 flex-col items-start">
+      <CardHeader className="z-10 absolute top-1 flex-col items-start ">
         <Chip className="bg-black text-tiny font-semibold text-white p-0.5">
           {version}
         </Chip>
-        <h4 className="font-medium text-2xl">{header}</h4>
+        <h4
+          className={`font-medium text-2xl bg-slate-600 px-4 ${CardBackgroundStyle}`}
+        >
+          {header}
+        </h4>
       </CardHeader>
       <Image
         removeWrapper
         alt={alternateName || "Card background"}
-        className="z-0 w-[300px] h-full rounded-lg object-cover"
+        className="z-0 w-[300px] h-full object-cover"
         src={imagePath}
       />
-      <CardFooter className="absolute bottom-0 w-full flex justify-between items-center p-4 bg-white/30 dark:bg-white/40 border-t max-h-52 overflow-scroll border-indigo-500 rounded-b-lg">
+      <CardFooter className="absolute bottom-0 w-full flex justify-between items-center p-4 bg-gray-100/95 dark:bg-gray-800/95 border-t max-h-52 overflow-y-scroll border-indigo-500 rounded-b-lg">
         <div>
           {showDescription ? (
-            <p className="text-black font-medium text-sm">{description}</p>
+            <p className="font-medium text-sm text-balance">{description}</p>
           ) : (
             <div className="flex flex-row items-center gap-10">
               <Link
@@ -100,7 +105,7 @@ const ProjectCard: React.FC<CardProps> = ({
               </Link>
               <Button
                 onClick={toggleDescription}
-                className="border-0 hover:border-1 boder-secundary-300  rounded-full px-1.5 py-0.5"
+                className="shadow group-hover:shadow-indigo-600 hover:scale-105  rounded-full px-1.5 py-0.5"
               >
                 Description
               </Button>

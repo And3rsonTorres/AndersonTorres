@@ -53,22 +53,11 @@ export interface SpandingCardProps {
  *
  * @property {React.ReactNode} children - The content to be displayed in the marquee.
  * @property {string} marqueeStyle - The CSS class names to apply to the marquee.
- * @property {number} [seconds] - The duration in seconds for the marquee animation.
  */
 export interface MarqueeProps {
   children: React.ReactNode;
   marqueeStyle: string;
-  seconds?: number;
 }
-/**
- * Represents an email message.
- *
- * @property {string | undefined} to - The email address of the recipient.
- * @property {string | undefined} from - The email address of the sender.
- * @property {string} subject - The subject line of the email.
- * @property {string} text - The plain text content of the email.
- * @property {string} html - The HTML content of the email.
- */
 /**
  * Represents the properties of an email.
  * @property {string | undefined} to - The email address of the recipient.
@@ -88,14 +77,29 @@ export interface EmailProps {
 /**
  * Represents the properties of a modal component.
  *
- * @property {string} Title - The title of the modal.
+ * @property {string} title - The title of the modal.
  * @property {string | React.ReactNode | JSX.Element} children - The content to be displayed in the modal.
  * @property {boolean} isOpen - Indicates whether the modal is open or closed.
  * @property {() => void} onClose - A function to be called when the modal is closed.
  */
 export interface ModalProps {
-  Title: string;
+  title: string;
   children: string | React.ReactNode | JSX.Element;
   isOpen: boolean;
   onClose: () => void;
+
+  /**
+   * Represents the properties of a timeline.
+   *
+   * @property {string} title - The title of the timeline item.
+   * @property {string} date - The date of the timeline item.
+   * @property {string} description - The description of the timeline item.
+   * @property {String []} skillsLearned - The skilled learned during that period
+   */
+}
+export interface TimelineItem {
+  title: string;
+  date: string;
+  description: string;
+  skillsLearned: string[];
 }
