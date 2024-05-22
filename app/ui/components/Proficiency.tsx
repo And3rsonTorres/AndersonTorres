@@ -68,7 +68,7 @@ const logos = [
 ];
 
 const style =
-  "flex w-full space-x-4 h-24  items-center bg-black/30 dark:bg-white/50 mb-10 shadow shadow-indigo-700 dark:shadow-indigo-300 overflow-hidden";
+  "flex w-full space-x-4 h-24  items-center mb-10 shadow shadow-indigo-700 dark:shadow-indigo-300 overflow-hidden";
 
 const Proficiency = () => {
   return (

@@ -12,7 +12,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ModalProps } from "@/app/Interface/interface";
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, Title }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, Title }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <h1 className="w-full border-b-2 border-gray-300 text-center text-lg mb-4">
-              {Title}
+              {title}
             </h1>
             <div className="flex flex-wrap mb-4 pt-4 justify-evenly border-b-2">
               {children}

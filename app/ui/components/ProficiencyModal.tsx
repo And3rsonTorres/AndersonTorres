@@ -84,7 +84,7 @@ const AllProficiency: React.FC = () => {
 
   return (
     <div className="flex self-start">
-      <Modal Title="I am Experience With" isOpen={isOpen} onClose={closeModal}>
+      <Modal title="I am Experience With" isOpen={isOpen} onClose={closeModal}>
         {logos.map((child, index) => (
           <div className="px-1 w-30 h-30" key={index}>
             {child}

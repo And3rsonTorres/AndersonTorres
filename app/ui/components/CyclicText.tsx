@@ -36,7 +36,7 @@ const CyclicText = () => {
   useEffect(() => {
     const greetingTimer = setTimeout(() => {
       setShowGreeting(false);
-    }, 3000);
+    }, 2500);
 
     const intervalSecondLine = setInterval(() => {
       setSkillIndex((prev) => (prev + 1) % skillPhrases.length);

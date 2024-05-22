@@ -11,7 +11,6 @@ import { CardProps } from "@/app/Interface/interface";
 import { CardProvider } from "@/app/lib/CardContext";
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { Spinner } from "@nextui-org/react";
 import { CardBackgroundStyle } from "@/app/Utils/TextUtil";
 
 const CardManager = () => {
@@ -38,10 +37,25 @@ const CardManager = () => {
   if (loading) {
     return (
       <div
-        className={`flex w-6/12 justify-center items-center rounded-xl p-6 max-w-md mx-auto ${CardBackgroundStyle}`}
+        className={`flex w-6/12 justify-center items-center rounded-xl p-6 max-w-md mx-auto animate-spin`}
       >
-        <Spinner />
-        <h1 className="text-4xl">Loading...</h1>
+        <svg width="100" height="100">
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            stroke-width="10"
+            fill="none"
+            stroke="#eee"
+          ></circle>
+
+          <path
+            d="M50 5 A 45 45 0 0 1 95 50"
+            fill="none"
+            stroke-width="10"
+            stroke="#4f46e5"
+          ></path>
+        </svg>
       </div>
     );
   }
