@@ -6,7 +6,6 @@ This is a Portfolio that I create to improve my presence online and interact wit
 
 
 ## Screenshots
-
 ![lightmode](https://github.com/And3rsonTorres/AndersonTorres/assets/106359275/45905911-be0f-4201-8549-08ecb4d23c85)
 ![DarkMode](https://github.com/And3rsonTorres/AndersonTorres/assets/106359275/e111c3fe-0809-465b-82cf-b02b657537c9)
 
