@@ -11,7 +11,6 @@ import { CardProps } from "@/app/Interface/interface";
 import { CardProvider } from "@/app/lib/CardContext";
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { CardBackgroundStyle } from "@/app/Utils/TextUtil";
 
 const CardManager = () => {
   const [cards, setCards] = useState<CardProps[]>([]);
@@ -61,7 +60,7 @@ const CardManager = () => {
   }
   return (
     <CardProvider>
-      <div className="flex flex-wrap justify-center md:justify-start m-auto gap-4 py-10">
+      <div className="flex flex-wrap justify-evenly m-auto gap-4">
         {cards.map((card) => (
           <ProjectCard key={card.id} {...card} />
         ))}

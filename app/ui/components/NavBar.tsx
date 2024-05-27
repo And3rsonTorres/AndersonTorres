@@ -30,39 +30,47 @@ export default function NavBar() {
           "h-full",
           "items-center",
           "py-2",
-          "hover:text-stone-200",
+          "hover:text-stone-400",
           "hover:dark:text-zinc-800",
           "data-[active=true]:after:absolute",
           "data-[active=true]:after:bottom-2",
           "data-[active=true]:after:left-0",
           "data-[active=true]:scale-105",
-          "data-[active=true]:text-stone-300",
+          "data-[active=true]:dark:text-stone-400",
           "data-[active=true]:after:right-0",
           "data-[active=true]:after:h-[3px]",
           "data-[active=true]:after:border-b-4",
           "data-[active=true]:after:hover:border-b-0",
-          "data-[active=true]:after:rounded-[4px]",
+          "data-[active=true]:after:rounded-full",
           "data-[active=true]:after:border-zinc-300",
-          "data-[active=true]:dark:text-zinc-600",
-          "data-[active=true]:dark:after:border-white",
+          "data-[active=true]:text-zinc-600",
+          "data-[active=true]:dark:after:border-stone-300",
         ],
       }}
-      className="bg-black/70  dark:bg-white/70 z-50 text-lg md:text-2xl font-medium"
+      className="dark:bg-black/70  bg-white/70 z-50 text-lg md:text-2xl font-medium shadow-sm group"
     >
       <NavbarBrand>
-        <Link href="/">
-          <Image
-            src="/AndersonMEmoji.png"
-            width={32}
-            height={32}
-            alt="AndersonMemoji"
-          />
-        </Link>
+        <Image
+          className="ml-2"
+          src="/AndersonMEmoji.png"
+          width={32}
+          height={32}
+          alt="AndersonMemoji"
+        />
       </NavbarBrand>
       <NavbarContent
         justify="center"
         className="items-center justify-between gap-4 md:gap-8 lg:gap-12"
       >
+        <NavbarItem isActive={pathname === "/"}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: -15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href="/">Home</Link>
+          </motion.div>
+        </NavbarItem>
         <NavbarItem isActive={pathname === "/projects"}>
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: -15 }}
@@ -90,9 +98,24 @@ export default function NavBar() {
             <Link href="/contact">Reach Out</Link>
           </motion.div>
         </NavbarItem>
+        <NavbarItem isActive={pathname === "/contact"}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: -15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Link
+              href="/Anderson Torres.pdf"
+              target="_blank"
+              aria-label="Resume"
+            >
+              Resume
+            </Link>
+          </motion.div>
+        </NavbarItem>
       </NavbarContent>
-      <NavbarContent className=" flex " justify="end">
-        <NavbarItem>
+      <NavbarContent className=" flex  mr-2" justify="end">
+        <NavbarItem className="group-hover:rotate-45 dark:group-hover:rotate-12">
           <ThemeSwitcher />
         </NavbarItem>
       </NavbarContent>

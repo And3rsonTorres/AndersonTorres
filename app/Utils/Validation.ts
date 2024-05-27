@@ -12,6 +12,5 @@ export const ContactSchema = z.object({
   FirstName: z.string().min(2, "First Name is too short"),
   LastName: z.string().min(2, "Last Name is too short"),
   Email: z.string().email("Please Provide a Valid Email"),
-  Message: z.string().min(10, "Plese provide more details in your message"),
-  allowContact: z.boolean(),
+  Message: z.string().min(10, "Please provide more details in your message"),
 });

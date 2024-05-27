@@ -8,6 +8,7 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ items }) => {
+  const reverse = [...items].reverse();
   return (
     <div className={`flex flex-col md:max-w-2xl m-10`}>
       <h1
@@ -15,7 +16,7 @@ const Timeline: React.FC<TimelineProps> = ({ items }) => {
       >
         Timeline
       </h1>
-      {items.map((item, index) => {
+      {reverse.map((item, index) => {
         const isEven = index % 2 === 0;
         return (
           <motion.div

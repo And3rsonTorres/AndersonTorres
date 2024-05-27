@@ -46,6 +46,7 @@ export interface CardManagerProps {
 export interface SpandingCardProps {
   inputText: string;
   title: string;
+  imagePath?: string;
 }
 
 /**

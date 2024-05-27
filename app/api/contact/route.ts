@@ -21,13 +21,7 @@ export async function POST(req: NextRequest) {
       await mail(parsed.data.Message);
       await prisma.contact.create({
         data: {
-          Name:
-            parsed.data.FirstName +
-            " " +
-            parsed.data.LastName +
-            " (" +
-            parsed.data.allowContact +
-            ")",
+          Name: parsed.data.FirstName + parsed.data.LastName,
           Email: parsed.data.Email,
           Message: parsed.data.Message,
         },

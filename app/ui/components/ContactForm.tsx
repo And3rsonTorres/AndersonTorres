@@ -48,27 +48,12 @@ const ContactForm = () => {
           Form.reset();
         })}
       >
-        <h2 className="text-2xl text-center mb-4">Contact Us</h2>
-        <div className="font-medium">
-          <label htmlFor="allowContact">
-            <input
-              type="checkbox"
-              id="allowContact"
-              {...Form.register("allowContact")}
-            />
-            Do Not Contact Me
-          </label>
-        </div>
-
+        <h2 className="text-2xl text-center mb-4">Contact Me</h2>
         <div className="grid grid-cols-2 font-medium gap-4 mb-4">
           <div>
             <label htmlFor="firstName" className="block mb-1">
               First Name
             </label>
-
-            <p className="text-sm text-black/45 dark:text-white mb-1">
-              Please enter your first name.
-            </p>
             <input
               type="text"
               id="firstName"
@@ -85,11 +70,6 @@ const ContactForm = () => {
             <label htmlFor="lastName" className="block mt-1">
               Last Name
             </label>
-
-            <p className="text-sm text-black/45 dark:text-white mb-1">
-              Please include your last name.
-            </p>
-
             <input
               type="text"
               id="lastName"
@@ -107,10 +87,6 @@ const ContactForm = () => {
           <label htmlFor="email" className="block mt-1">
             Email
           </label>
-          <p className="text-sm text-black/45 dark:text-white mb-1">
-            Please share your email address so I can respond to your inquiry
-            promptly.
-          </p>
           <input
             type="email"
             id="email"
@@ -136,7 +112,6 @@ const ContactForm = () => {
             id="message"
             {...Form.register("Message")}
             rows={5}
-            placeholder="Write your message here..."
             className={InputStyle}
           />
           {Form.formState.errors.Message && (
