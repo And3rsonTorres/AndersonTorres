@@ -73,7 +73,7 @@ const ProjectCard: React.FC<CardProps> = ({
     <Card
       isFooterBlurred
       ref={cardRef}
-      className="h-[300px] group rounded-xl shadow shadow-indigo-700 dark:shadow-indigo-200"
+      className="h-[300px] group rounded-xl shadow shadow-indigo-700 dark:shadow-indigo-200 mx-2 my-10"
     >
       <CardHeader className="z-10 absolute top-1 flex-col items-start ">
         <Chip className="bg-black text-tiny font-semibold text-white p-0.5">

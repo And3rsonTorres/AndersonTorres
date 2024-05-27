@@ -25,7 +25,7 @@ const Marquee: React.FC<MarqueeProps> = ({ children, marqueeStyle }) => {
         className="flex"
         animate={{ x: "-50%" }}
         transition={{
-          duration: 12,
+          duration: 70,
           ease: "linear",
           repeat: Infinity,
           repeatType: "loop",

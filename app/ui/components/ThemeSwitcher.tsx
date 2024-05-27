@@ -8,7 +8,7 @@
  * Clicking the button will toggle the theme between light and dark.
  */
 
-import { Button } from "@nextui-org/react";
+import { Button, Tooltip } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import ThemeIcon from "../../../public/ThemeIcon";
@@ -23,16 +23,19 @@ export function ThemeSwitcher() {
   if (!mounted) return null;
 
   return (
-    <Button
-      isIconOnly
-      size="sm"
-      aria-label="themes"
-      radius="full"
-      className="text-white hover:text-gray-700 hover:bg-white dark:hover:text-warning"
-      onClick={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
-    >
-      {" "}
-      <ThemeIcon dark={theme === "dark"} />
-    </Button>
+    <Tooltip content="Change Theme">
+      <Button
+        isIconOnly
+        size="sm"
+        aria-label="themes"
+        radius="full"
+        className="text-gray-700 dark:text-warning"
+        onClick={() =>
+          theme === "dark" ? setTheme("light") : setTheme("dark")
+        }
+      >
+        <ThemeIcon dark={theme === "dark"} />
+      </Button>
+    </Tooltip>
   );
 }

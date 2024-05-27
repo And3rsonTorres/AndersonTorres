@@ -25,7 +25,7 @@ const skillPhrases = [
 const gradients = [
   "from-[#0099ff] to-[#006699]",
   "from-[#ff9900] to-[#cc6600]",
-  "from-[#ff0066] to-[#cc0033]",
+  "from-[#cc0033] to-[#ff0066]",
 ];
 
 const CyclicText = () => {
