@@ -173,7 +173,7 @@ export function NextJS() {
           </clipPath>
         </defs>
       </svg>
-      <p className="text-center font-bold">Kotlin</p>
+      <p className="text-center font-bold">NextJS</p>
     </>
   );
 }

@@ -2,7 +2,6 @@
 import { about2, timelines } from "@/public/data";
 import InfoCard from "../ui/components/InfoCard";
 import Timeline from "../ui/components/TimeLine";
-import { Image } from "@nextui-org/react";
 import { useState } from "react";
 import Modal from "../ui/components/Modal";
 import ContactForm from "../ui/components/ContactForm";
@@ -26,6 +25,7 @@ function About() {
       />
 
       <Timeline items={timelines} />
+
       <Modal
         title="Thanks For Contacting me"
         isOpen={isOpen}

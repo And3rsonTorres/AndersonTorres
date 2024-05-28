@@ -47,7 +47,7 @@ const Footer = () => {
               isExternal
             >
               <Image
-                src="/LinkedIn_Logo_initials.png"
+                src="/LinkedIn.png"
                 alt="LinkedIn Logo"
                 className="w-6 h-6 md:w-10 md:h-10"
               />

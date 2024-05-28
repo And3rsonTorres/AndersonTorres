@@ -117,7 +117,7 @@ export const timelines: TimelineItem[] = [
     title: "B.S. in Computer Science @ University Of Massachusetts Lowell",
     date: "Dec 2023",
     description:
-      "This was road with many challenges but with the help of classmates and Proffesors, I enriched my life with knowledge and skills.",
+      "This journey was filled with many challenges, but with the support of my classmates and professors, I enriched my life with valuable knowledge and skills.",
     skillsLearned: [],
   },
   {

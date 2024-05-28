@@ -43,7 +43,7 @@ const CardManager = () => {
             cx="50"
             cy="50"
             r="45"
-            stroke-width="10"
+            strokeWidth="10"
             fill="none"
             stroke="#eee"
           ></circle>
