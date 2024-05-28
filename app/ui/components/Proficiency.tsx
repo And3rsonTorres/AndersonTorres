@@ -1,3 +1,11 @@
+/**
+ * The `Proficiency` component displays a marquee of logos representing various technologies and tools that the user is proficient in.
+ *
+ * The component imports a set of logo icons from the `@/public/logos` module and renders them in a marquee using the `Marquee` component.
+ * The `AllProficiency` component is also rendered, which likely provides additional functionality related to proficiency.
+ *
+ * The `style` constant defines the CSS styles applied to the marquee container.
+ */
 "use client";
 import {
   C,

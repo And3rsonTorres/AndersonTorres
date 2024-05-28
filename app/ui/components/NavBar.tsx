@@ -12,15 +12,21 @@ import {
   Link,
   NavbarBrand,
   NavbarItem,
+  Avatar,
 } from "@nextui-org/react";
-import Image from "next/image";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import HamburgerMenu from "./HamburgerMenu";
+
 export default function NavBar() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   return (
     <Navbar
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll
       isBordered
       classNames={{
@@ -49,18 +55,19 @@ export default function NavBar() {
       }}
       className="dark:bg-black/70  bg-white/70 z-50 text-lg md:text-2xl font-medium shadow-sm group"
     >
-      <NavbarBrand>
-        <Image
-          className="ml-2"
-          src="/AndersonMEmoji.png"
-          width={32}
-          height={32}
-          alt="AndersonMemoji"
-        />
-      </NavbarBrand>
+      <NavbarContent className="sm:hidden" justify="start">
+        <HamburgerMenu />
+      </NavbarContent>
+
+      <NavbarContent className="pr-3" justify="center">
+        <NavbarBrand>
+          <Avatar className="ml-2" src="/logo.png" alt="A and T Logo" />
+        </NavbarBrand>
+      </NavbarContent>
+
       <NavbarContent
         justify="center"
-        className="items-center justify-between gap-4 md:gap-8 lg:gap-12"
+        className="items-center justify-between gap-4 md:gap-8 lg:gap-12 hidden sm:flex"
       >
         <NavbarItem isActive={pathname === "/"}>
           <motion.div
@@ -71,7 +78,10 @@ export default function NavBar() {
             <Link href="/">Home</Link>
           </motion.div>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/projects"}>
+        <NavbarItem
+          isActive={pathname === "/projects"}
+          className="hidden sm:flex"
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: -15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -80,7 +90,7 @@ export default function NavBar() {
             <Link href="/projects">Projects</Link>
           </motion.div>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/about"}>
+        <NavbarItem isActive={pathname === "/about"} className="hidden sm:flex">
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: -15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -89,7 +99,10 @@ export default function NavBar() {
             <Link href="/about">About</Link>
           </motion.div>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/contact"}>
+        <NavbarItem
+          isActive={pathname === "/contact"}
+          className="hidden sm:flex"
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: -15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -98,7 +111,10 @@ export default function NavBar() {
             <Link href="/contact">Reach Out</Link>
           </motion.div>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/contact"}>
+        <NavbarItem
+          isActive={pathname === "/resume"}
+          className="hidden sm:flex"
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: -15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
