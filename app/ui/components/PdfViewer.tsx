@@ -24,7 +24,7 @@ export default function PDFFileViewer(file: File) {
 
   const [numPages, setNumPages] = useState<number>();
   const [windowWidth, setWindowWidth] = useState(1024);
-  const [isDivVisible, setIsDivVisible] = useState(true);
+  const [isDivVisible, setIsDivVisible] = useState(false);
 
   useEffect(() => {
     // Define a function to update the state based on the window's width
@@ -76,7 +76,7 @@ export default function PDFFileViewer(file: File) {
     text-center md:text-2xl text-lg shadow-lg sm:p-2 p-3 top-0 z-50"
         onClick={toggleDivVisibility}
       >
-        <h1>CPP Portfolio</h1>
+        <h6>Toggle the Portfolio</h6>
       </header>
       {isDivVisible && (
         <div className="flex my-2.5 p-2.5">
