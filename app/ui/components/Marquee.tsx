@@ -32,7 +32,7 @@ const Marquee: React.FC<MarqueeProps> = ({ children, marqueeStyle }) => {
         }}
       >
         {infiniteChildren.map((child, index) => (
-          <motion.div className="px-2 " key={index} whileHover={{ scale: 1.1 }}>
+          <motion.div className="px-2" key={index} whileHover={{ scale: 1.1 }}>
             {child}
           </motion.div>
         ))}
