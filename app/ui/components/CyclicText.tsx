@@ -57,34 +57,17 @@ const CyclicText = () => {
         {showGreeting ? (
           <TypeAnimation
             sequence={[greeting]}
-            className={`text-5xl md:text-7xl font-bold pt-10 bg-clip-text text-transparent bg-gradient-to-r ${gradients[2]}`}
+            className={`text-3xl md:text-5xl font-bold pt-4 bg-clip-text text-transparent bg-gradient-to-r ${gradients[2]}`}
           ></TypeAnimation>
         ) : (
-          <h1 className="text-5xl md:text-7xl font-bold pt-10">{handshake}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold pt-4">{handshake}</h1>
         )}
-        <h2 className="text-3xl md:text-5xl font-bold mt-4">
+        <h2 className="text-xl md:text-3xl font-bold mt-4">
           {!showGreeting && (
-            <>
-              <AnimatedCharacters
-                text={`${skillPhrases[indexSkill]}:`}
-                gradientClass={gradients[colorIndex]}
-              />
-              <br />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 mx-auto text-indigo-700 dark:text-indigo-400 animate-bounce"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </>
+            <AnimatedCharacters
+              text={`${skillPhrases[indexSkill]}:`}
+              gradientClass={gradients[colorIndex]}
+            />
           )}
         </h2>
       </div>
