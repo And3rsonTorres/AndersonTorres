@@ -5,11 +5,6 @@ import Timeline from "../ui/components/TimeLine";
 import { useState } from "react";
 import Modal from "../ui/components/Modal";
 import ContactForm from "../ui/components/ContactForm";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "about me",
-};
 
 function About() {
   const [isOpen, setIsOpen] = useState(false);
