@@ -1,6 +1,16 @@
-"use client";
+/**
+ * Renders the CPP Portfolio page, which showcases Anderson Torres' work for the Comp IV course at the University of Massachusetts Lowell.
+ * This page includes an introduction, key features, tech stack, notable projects, learning outcomes, and future enhancements.
+ * It also provides a link to view the portfolio PDF and a link to the GitHub repository.
+ */
 import PdfViewer from "@/app/ui/components/PdfViewer";
 import { Link } from "@nextui-org/react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CPP Portfolio",
+};
+
 export default function CPP() {
   return (
     <>
@@ -9,8 +19,8 @@ export default function CPP() {
 
         <h2>Introduction</h2>
         <p>
-          Anderson Torres' CPP Portfolio is a culmination of his work for the
-          Comp IV course at the University of Massachusetts Lowell. This
+          Anderson Torres&apos; CPP Portfolio is a culmination of his work for
+          the Comp IV course at the University of Massachusetts Lowell. This
           repository showcases a variety of projects, demonstrating proficiency
           in C++ and software development skills.
         </p>
@@ -42,7 +52,7 @@ export default function CPP() {
         </p>
         <p>
           <strong>Libraries and Frameworks:</strong> Utilizes standard C++
-          libraries,SFML,BOOST, Valgrind.
+          libraries,SFML,BOOST and Valgrind.
         </p>
 
         <h2>Notable Projects</h2>

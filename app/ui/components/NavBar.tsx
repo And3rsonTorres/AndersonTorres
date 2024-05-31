@@ -61,7 +61,9 @@ export default function NavBar() {
 
       <NavbarContent className="pr-3" justify="center">
         <NavbarBrand>
-          <Avatar className="ml-2" src="/logo.png" alt="A and T Logo" />
+          <Link href="/">
+            <Avatar className="ml-2" src="/logo.png" alt="A and T Logo" />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 

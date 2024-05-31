@@ -4,6 +4,8 @@
  * @param file - An object with a `path` property that specifies the URL or file path of the PDF document to be displayed.
  * @returns A React component that displays the PDF document.
  */
+"use client";
+import { Link } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { pdfjs, Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -70,13 +72,24 @@ export default function PDFFileViewer(file: File) {
   };
 
   return (
-    <div className="bg-zinc-400 font-sans text-white">
+    <div className="bg-zinc-400 font-sans rounded-lg mb-10">
+      {isDivVisible && (
+        <div className="fixed bottom-10 right-10">
+          <Link
+            href="#top"
+            className="bg-primary/10 w-full font-semibold text-foreground/90 py-2 px-4 rounded-xl hover:bg-primary/35 transition-colors hover:-translate-y-1"
+          >
+            Back to top
+          </Link>
+        </div>
+      )}
+
       <header
-        className="bg-gradient-to-r from-indigo-600  to-sky-600 via-blue-600 
-    text-center md:text-2xl text-lg shadow-lg sm:p-2 p-3 top-0 z-50"
+        className="bg-primary/90 w-full font-semibold py-2 px-4 rounded-xl hover:bg-primary-600 transition-colors hover:shadow-indigo-600 cursor-pointer
+    text-center md:text-2xl text-lg shadow-sm sm:p-2 p-3 top-0 z-50 "
         onClick={toggleDivVisibility}
       >
-        <h6>Toggle the Portfolio</h6>
+        <h6 className="text-foreground">Toggle the Portfolio</h6>
       </header>
       {isDivVisible && (
         <div className="flex my-2.5 p-2.5">

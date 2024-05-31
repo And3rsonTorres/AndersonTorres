@@ -20,15 +20,15 @@ function Towwise() {
         maximum towing capacity of their vehicles. This tool is invaluable for
         individuals needing to tow trailers or other heavy loads, offering
         insights into safe and optimal towing limits based on specific vehicle
-        models. Whether you're planning a move, a camping trip, or any activity
-        that requires towing, TowWise ensures you're equipped with the right
-        information.
+        models. Whether you&apos;re planning a move, a camping trip, or any
+        activity that requires towing, TowWise ensures you&apos;re equipped with
+        the right information.
       </p>
 
       <h2>Background</h2>
       <p>
         The need for TowWise arose from a common issue observed in the rental
-        industry: customers often overestimate their vehicles' towing
+        industry: customers often overestimate their vehicles&apos; towing
         capabilities. This can lead to dangerous situations on the road.
         Recognizing the safety risks involved, the developer created TowWise to
         provide accurate and accessible towing information, ensuring users can
@@ -47,7 +47,7 @@ function Towwise() {
           <strong>VIN Decoding:</strong> Future integration to decode U.S.
           Vehicle Identification Numbers (VIN) for precise towing capacities.
           This will allow users to get even more accurate information based on
-          their vehicle's unique VIN.
+          their vehicle&apos;s unique VIN.
         </li>
         <li>
           <strong>Trailer Categories:</strong> Upcoming feature to categorize
@@ -88,9 +88,9 @@ function Towwise() {
         for handling user data and application logic.
       </p>
       <p>
-        <strong>Hosting:</strong> The application is hosted on Vercel. Vercel's
-        platform offers seamless deployment, scalability, and performance
-        optimization for Next.js applications.
+        <strong>Hosting:</strong> The application is hosted on Vercel.
+        Vercel&apos;s platform offers seamless deployment, scalability, and
+        performance optimization for Next.js applications.
       </p>
 
       <h2>Future Potential</h2>

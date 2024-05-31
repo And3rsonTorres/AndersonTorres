@@ -61,7 +61,7 @@ function UMLRightNow() {
           Navigate to the project directory: <code>cd uml-right-now</code>.
         </li>
         <li>
-          Install dependencies: <code>npm i --legacy-peer-deps</code> (or{" "}
+          Install dependencies: <code>npm i --legacy-peer-deps</code> (or
           <code>npm i --force</code> if needed). This step installs all
           necessary libraries and modules for the application to function
           correctly.
@@ -92,7 +92,7 @@ function UMLRightNow() {
       </p>
       <p>
         <strong>Hosting:</strong> The entire application is hosted on Vercel.
-        Vercel's platform offers seamless deployment, scalability, and
+        Vercel&apos;s platform offers seamless deployment, scalability, and
         performance optimization for Next.js applications.
       </p>
 

@@ -1,13 +1,13 @@
 /**
- * Renders the EasyNoteAudio page, which provides information about the project's mission, background, results, lessons learned, and collaborators.
+ * Renders the EasyNoteAudio page, which provides information about the project&apos;s mission, background, results, lessons learned, and collaborators.
  *
  * The page includes the following sections:
- * - Mission Statement: Describes the app's purpose of making notetaking convenient and accessible with features like speech-to-text and text-to-speech.
+ * - Mission Statement: Describes the app&apos;s purpose of making notetaking convenient and accessible with features like speech-to-text and text-to-speech.
  * - Project Information and Background: Explains how the app is designed to be helpful for a diverse group of users with different needs.
- * - Project Results: Provides a table with details on the app's various features and their current status.
+ * - Project Results: Provides a table with details on the app&apos;s various features and their current status.
  * - Lessons Learned: Includes a table with insights gained during the project, such as the importance of effective communication, planning, and setting realistic expectations.
  * - Project Collaborators: Lists the team members and their roles, with links to their GitHub and LinkedIn profiles.
- * - GitHub Release: Provides a link to the project's latest GitHub release.
+ * - GitHub Release: Provides a link to the project&apos;s latest GitHub release.
  */
 import { Link } from "@nextui-org/react";
 import { Metadata } from "next";
@@ -31,18 +31,18 @@ export default function EasyNoteAudio() {
       <h2>Project Information and Background</h2>
       <p>
         Our app is designed to be of help for a diverse group of people with
-        different needs. EasyNote Audio’s main purpose is to make note taking
-        easy and accessible for everyone. Features such as speech to text and
-        text to speech can enhance the users experience by allowing hands off
-        note taking abilities. This feature can be especially handy if users
+        different needs. EasyNote Audio&apos;s main purpose is to make note
+        taking easy and accessible for everyone. Features such as speech to text
+        and text to speech can enhance the users experience by allowing hands
+        off note taking abilities. This feature can be especially handy if users
         have a disability or simply do not have free hands to take notes. Users
         can also add bullet points to their notes as well as create their own
         to-do list. These features will further enhance the user experience by
-        giving them access to different forms of note taking. Whether that’s a
-        to-do list or several bullet points.
+        giving them access to different forms of note taking. Whether
+        that&apos;s a to-do list or several bullet points.
       </p>
       <h2>Project Results</h2>
-      <table className="table-auto shadow shadow-gray-500 ">
+      <table className="table-auto  rounded-lg shadow shadow-gray-500 ">
         <thead>
           <tr className="bg-gray-200 dark:bg-gray-700">
             <th className="px-4 py-2">Title</th>
@@ -93,8 +93,8 @@ export default function EasyNoteAudio() {
             </td>
             <td className="px-4 py-2">
               <p>
-                Mostly functionally, however it can't do nested bullets and only
-                works on the start of a line.
+                Mostly functionally, however it can&apos;t do nested bullets and
+                only works on the start of a line.
               </p>
             </td>
           </tr>
@@ -109,10 +109,10 @@ export default function EasyNoteAudio() {
             </td>
             <td className="px-4 py-2">
               <p>
-                Mostly functionally because it doesn't work well with the bullet
-                list mode. Also, it would be better if the speech to text mode
-                didn't take up the whole screen, so the user can still see the
-                notes.
+                Mostly functionally because it doesn&apos;t work well with the
+                bullet list mode. Also, it would be better if the speech to text
+                mode didn&apos;t take up the whole screen, so the user can still
+                see the notes.
               </p>
             </td>
           </tr>
@@ -145,15 +145,15 @@ export default function EasyNoteAudio() {
             <td className="px-4 py-2">
               <p>
                 Mostly Functional, sometimes when trying to delete a task, it
-                gets stuck on the delete animation if the dialog isn't clicked
-                on when present.
+                gets stuck on the delete animation if the dialog isn&apos;t
+                clicked on when present.
               </p>
             </td>
           </tr>
         </tbody>
       </table>
       <h2>Lessons Learned</h2>
-      <table className="table-auto shadow shadow-gray-500 ">
+      <table className="table-auto rounded-lg shadow shadow-gray-500 ">
         <thead>
           <tr className="bg-gray-200 dark:bg-gray-700">
             <th className="px-4 py-2">Tittle</th>
@@ -215,7 +215,7 @@ export default function EasyNoteAudio() {
         </tbody>
       </table>
       <h2>Project Collaborators</h2>
-      <table className="table-auto shadow shadow-gray-500 ">
+      <table className="table-auto rounded-lg shadow shadow-gray-500 ">
         <thead>
           <tr className="bg-gray-200 dark:bg-gray-700">
             <th className="px-4 py-2">Name</th>
