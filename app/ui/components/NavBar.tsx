@@ -27,7 +27,6 @@ export default function NavBar() {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      shouldHideOnScroll
       isBordered
       classNames={{
         item: [

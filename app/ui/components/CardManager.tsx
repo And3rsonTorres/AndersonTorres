@@ -51,7 +51,7 @@ const CardManager = () => {
           <path
             d="M50 5 A 45 45 0 0 1 95 50"
             fill="none"
-            stroke-width="10"
+            strokeWidth="10"
             stroke="#4f46e5"
           ></path>
         </svg>
