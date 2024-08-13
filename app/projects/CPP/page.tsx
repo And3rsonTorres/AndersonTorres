@@ -3,7 +3,7 @@
  * This page includes an introduction, key features, tech stack, notable projects, learning outcomes, and future enhancements.
  * It also provides a link to view the portfolio PDF and a link to the GitHub repository.
  */
-import PdfViewer from "@/app/ui/components/PdfViewer";
+//import PdfViewer from "@/app/ui/components/PdfViewer";
 import { Link } from "@nextui-org/react";
 import { Metadata } from "next";
 
@@ -12,6 +12,30 @@ export const metadata: Metadata = {
 };
 
 export default function CPP() {
+  if (typeof Promise.withResolvers === "undefined") {
+    if (typeof window !== "undefined") {
+      // @ts-expect-error This does not exist outside of polyfill which this is doing
+      window.Promise.withResolvers = function () {
+        let resolve, reject;
+        const promise = new Promise((res, rej) => {
+          resolve = res;
+          reject = rej;
+        });
+        return { promise, resolve, reject };
+      };
+    } else {
+      // @ts-expect-error This does not exist outside of polyfill which this is doing
+      global.Promise.withResolvers = function () {
+        let resolve, reject;
+        const promise = new Promise((res, rej) => {
+          resolve = res;
+          reject = rej;
+        });
+        return { promise, resolve, reject };
+      };
+    }
+  }
+
   return (
     <>
       <div className="prose lg:prose-xl text-center m-auto dark:prose-invert">
@@ -98,13 +122,16 @@ export default function CPP() {
           </li>
         </ul>
 
-        <PdfViewer path="../CPP_Portfolio.pdf" />
+        {
+          // working around errors that inhibits the PDF viewer from loading in the browser
+          //<PdfViewer path="../CPP_Portfolio.pdf" />
+        }
         <Link
           href="https://github.com/And3rsonTorres/CPP_Porfolio"
           isExternal
           className="bg-primary w-full font-semibold py-2 px-4 rounded-xl hover:bg-primary-600 transition-colors hover:-translate-y-1"
         >
-          See it in Github
+          Catch it on Github
         </Link>
       </div>
     </>

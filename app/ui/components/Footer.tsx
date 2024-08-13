@@ -24,7 +24,8 @@ const Footer = () => {
     >
       <div className="container mx-auto">
         <p className="text-lg md:text-2xl font-medium">
-          © {currentYear} · Anderson Torres
+          © {currentYear !== 2024 ? `2024-${currentYear}` : currentYear} ·
+          Anderson Torres{" "}
         </p>
         <ul className="flex justify-center gap-4 mt-2">
           <li>

@@ -5,26 +5,39 @@
  *
  * The menu contains links to various pages of the application, including the home page, projects page, about page, contact page, and a link to the user's resume.
  *
- * The `toggleMenu` function is called when the hamburger button is clicked, and it toggles the `isOpen` state to show or hide the menu. The `handleLinkClick` function is called when a menu link is clicked, and it sets the `isOpen` state to `false` to close the menu.
+ * The `toggleMenu` function is called when the hamburger button is clicked, and it toggles the `isOpen` state to show or hide the menu. The `toggleMenu` function is called when a menu link is clicked, and it sets the `isOpen` state to `false` to close the menu.
  */
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@nextui-org/react";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !(menuRef.current as Node).contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="relative">
+    <div className="relative" ref={menuRef}>
       <button
         className="focus:outline-none z-10 ml-2 mt-2"
         onClick={toggleMenu}
@@ -54,7 +67,7 @@ const HamburgerMenu = () => {
             animate={{ opacity: 1, y: -10 }}
             exit={{ opacity: 0, y: 100 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-0 mt-10 dark:bg-black/70  bg-white/70 z-50 rounded-r-md shadow-sm "
+            className="absolute top-2 mt-10 dark:bg-black/70  bg-white/70 z-50 rounded-r-md shadow-sm "
           >
             <div className="p-4">
               <ul>
@@ -64,7 +77,7 @@ const HamburgerMenu = () => {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Link href="/" onClick={handleLinkClick}>
+                    <Link href="/" onClick={toggleMenu}>
                       Home
                     </Link>
                   </motion.div>
@@ -75,7 +88,7 @@ const HamburgerMenu = () => {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Link href="/projects" onClick={handleLinkClick}>
+                    <Link href="/projects" onClick={toggleMenu}>
                       Projects
                     </Link>
                   </motion.div>
@@ -86,7 +99,7 @@ const HamburgerMenu = () => {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <Link href="/about" onClick={handleLinkClick}>
+                    <Link href="/about" onClick={toggleMenu}>
                       About
                     </Link>
                   </motion.div>
@@ -97,7 +110,7 @@ const HamburgerMenu = () => {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <Link href="/contact" onClick={handleLinkClick}>
+                    <Link href="/contact" onClick={toggleMenu}>
                       Reach Out
                     </Link>
                   </motion.div>
@@ -112,7 +125,7 @@ const HamburgerMenu = () => {
                       href="/Anderson Torres.pdf"
                       target="_blank"
                       aria-label="Resume"
-                      onClick={handleLinkClick}
+                      onClick={toggleMenu}
                     >
                       Resume
                     </Link>
