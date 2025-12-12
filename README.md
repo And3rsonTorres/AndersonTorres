@@ -36,4 +36,5 @@ LightMode             |  DarkMode
 
 ### [Anderson Torres](https://www.github.com/and3rsontorres)
 #### OPEN TO FEEDBACK AND INQURIES FORM IN THE PORTFOLIO
+#### ARCHIVED
   
